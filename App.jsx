@@ -38,6 +38,12 @@ App = React.createClass({
     // Clear the form
     ReactDOM.findDOMNode(this.refs.textInput).value = "";
   },
+
+  toggleHideCompleted() {
+    this.setState({
+      hideCompleted: ! this.state.hideCompleted
+    });
+  },
  
   render() {
     return (
