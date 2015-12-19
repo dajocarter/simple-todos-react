@@ -39,7 +39,9 @@ App = React.createClass({
     // Insert the task into the database
     Tasks.insert({
       text: text,
-      createdAt: new Date()
+      createdAt: new Date(),
+      owner: Meteor.userId(),
+      username: Meteor.user().username
     });
  
     // Clear the form
