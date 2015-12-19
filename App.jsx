@@ -21,7 +21,7 @@ App = React.createClass({
     event.preventDefault();
  
     // Find the text field via the React ref
-    var text = React.findDOMNode(this.refs.textInput).value.trim();
+    var text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
 
     // Insert the task into the database
     Tasks.insert({
@@ -30,7 +30,7 @@ App = React.createClass({
     });
  
     // Clear the form
-    React.findDOMNode(this.refs.textInput).value = "";
+    ReactDOM.findDOMNode(this.refs.textInput).value = "";
   },
  
   render() {
