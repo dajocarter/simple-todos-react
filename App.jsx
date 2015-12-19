@@ -16,6 +16,22 @@ App = React.createClass({
       return <Task key={task._id} task={task} />;
     });
   },
+
+  handleSubmit(event) {
+    event.preventDefault();
+ 
+    // Find the text field via the React ref
+    var text = React.findDOMNode(this.refs.textInput).value.trim();
+
+    // Insert the task into the database
+    Tasks.insert({
+      text: text,
+      createdAt: new Date()
+    });
+ 
+    // Clear the form
+    React.findDOMNode(this.refs.textInput).value = "";
+  },
  
   render() {
     return (
