@@ -38,12 +38,7 @@ App = React.createClass({
     var text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
 
     // Insert the task into the database
-    Tasks.insert({
-      text: text,
-      createdAt: new Date(),
-      owner: Meteor.userId(),
-      username: Meteor.user().username
-    });
+    Meteor.call("addTask", text);
  
     // Clear the form
     ReactDOM.findDOMNode(this.refs.textInput).value = "";
