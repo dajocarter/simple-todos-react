@@ -2,7 +2,7 @@
 Task = React.createClass({
   propTypes: {
     task: React.PropTypes.object.isRequired,
-    showPrivateButton: React.propTypes.bool.isRequired
+    showPrivateButton: React.PropTypes.bool.isRequired
   },
  
   toggleChecked() {
