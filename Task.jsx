@@ -2,7 +2,8 @@
 Task = React.createClass({
   propTypes: {
     task: React.PropTypes.object.isRequired,
-    showPrivateButton: React.PropTypes.bool.isRequired
+    showPrivateButton: React.PropTypes.bool.isRequired,
+    showDeleteButton: React.PropTypes.bool.isRequired
   },
  
   toggleChecked() {
@@ -25,9 +26,13 @@ Task = React.createClass({
  
     return (
       <li className={taskClassName}>
-        <button className="delete" onClick={this.deleteThisTask}>
-          &times;
-        </button>
+
+        { this.props.showDeleteButton ? (
+          <button className="delete" onClick={this.deleteThisTask}>
+            &times;
+          </button>
+          ) : ''
+        }
  
         <input
           type="checkbox"

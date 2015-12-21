@@ -29,10 +29,12 @@ App = React.createClass({
     return this.data.tasks.map((task) => {
       const currentUserId = this.data.currentUser && this.data.currentUser._id;
       const showPrivateButton = task.owner === currentUserId;
+      const showDeleteButton = task.owner === currentUserId;
       return <Task
         key={task._id}
         task={task}
-        showPrivateButton={showPrivateButton} />;
+        showPrivateButton={showPrivateButton}
+        showDeleteButton={showDeleteButton} />;
     });
   },
 
